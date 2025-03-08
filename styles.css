@@ -1,0 +1,91 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f2e9, #c8e6c9);
+}
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+h2 {
+    color: #218838;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+}
+select, input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+input:focus, select:focus {
+    border-color: #218838;
+    outline: none;
+    box-shadow: 0 0 5px rgba(33, 136, 56, 0.5);
+}
+button {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(135deg, #1e7e34, #166534);
+}
+.alert {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    background: #ffebee;
+    padding: 10px;
+    border-radius: 5px;
+}
+.receipt-box {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+    border-top: 4px solid #218838;
+}
+.receipt-box h3 {
+    color: #218838;
+    font-size: 20px;
+}
+.receipt-box p {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 16px;
+}
+.payment-box {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+.icon {
+    margin-right: 5px;
+}

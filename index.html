@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دفع اشتراكات ستارلينك - ساهل</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>دفع اشتراكات ستارلينك</h2>
+    
+    <label><span class="icon">📡</span>اختر نوع الاشتراك:</label>
+    <select id="subscriptionType">
+        <option value="العادي - 50$">العادي - 50$</option>
+        <option value="بزنس - 100$">بزنس - 100$</option>
+        <option value="برو - 150$">برو - 150$</option>
+    </select>
+
+    <label><span class="icon">👤</span>الاسم الرباعي:</label>
+    <input type="text" id="fullName" placeholder="أدخل اسمك الرباعي">
+
+    <label><span class="icon">📞</span>رقم واتساب:</label>
+    <input type="text" id="whatsapp" placeholder="مثال: 249912345678">
+
+    <label><span class="icon">📧</span>البريد الإلكتروني:</label>
+    <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني">
+
+    <label><span class="icon">🛰️</span>رقم جهاز ستارلينك:</label>
+    <input type="text" id="deviceId" placeholder="أدخل رقم الجهاز">
+
+    <div class="alert">⚠️ تحذير: يمنع إدخال بيانات احتيالية، وإلا ستتعرض للمسائلة القانونية.</div>
+
+    <button onclick="submitForm()">إرسال الطلب</button>
+
+    <div class="receipt-box" id="receipt">
+        <h3>📄 إيصال الدفع</h3>
+        <p><strong>👤 الاسم:</strong> <span id="rFullName"></span></p>
+        <p><strong>📞 رقم واتساب:</strong> <span id="rWhatsapp"></span></p>
+        <p><strong>📧 البريد الإلكتروني:</strong> <span id="rEmail"></span></p>
+        <p><strong>🛰️ رقم الجهاز:</strong> <span id="rDeviceId"></span></p>
+        <p><strong>💳 نوع الاشتراك:</strong> <span id="rSubscription"></span></p>
+        <p><strong>🏦 الحساب البنكي للدفع:</strong> 4708442 - بنكك</p>
+        <p><strong>👤 اسم الحساب:</strong> أمجد عثمان عيسى</p>
+        <button onclick="printReceipt()">🖨️ طباعة الإيصال</button>
+        <button onclick="downloadPDF()">📥 تحميل كـ PDF</button>
+    </div>
+
+    <div class="payment-box" id="paymentBox">
+        <h3 style="color: #218838;">💰 إدخال رقم العملية</h3>
+        <label>🔢 رقم العملية:</label>
+        <input type="text" id="transactionId" placeholder="أدخل رقم العملية">
+        <button onclick="sendTransaction()">📤 إرسال رقم العملية</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
