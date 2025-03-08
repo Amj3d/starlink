@@ -1,38 +1,29 @@
-function submitForm() {
-    let subscription = document.getElementById("subscriptionType").value;
+function sendInvoiceWhatsApp() {
     let fullName = document.getElementById("fullName").value;
     let whatsapp = document.getElementById("whatsapp").value;
     let email = document.getElementById("email").value;
     let deviceId = document.getElementById("deviceId").value;
+    let subscription = document.getElementById("subscriptionType").value;
 
     if (!fullName || !whatsapp || !email || !deviceId) {
         alert("الرجاء ملء جميع الحقول!");
         return;
     }
 
-    document.getElementById("rFullName").innerText = fullName;
-    document.getElementById("rWhatsapp").innerText = whatsapp;
-    document.getElementById("rEmail").innerText = email;
-    document.getElementById("rDeviceId").innerText = deviceId;
-    document.getElementById("rSubscription").innerText = subscription;
-    document.getElementById("receipt").style.display = "block";
-    document.getElementById("paymentBox").style.display = "block";
-}
+    let message = `📄 *إيصال دفع اشتراك ستارلينك*\n\n👤 *الاسم:* ${fullName}\n📞 *رقم واتساب:* ${whatsapp}\n📧 *البريد:* ${email}\n🛰️ *رقم الجهاز:* ${deviceId}\n💳 *نوع الاشتراك:* ${subscription}\n🏦 *رقم الحساب للدفع:* 4708442 - بنكك\n👤 *اسم الحساب:* أمجد عثمان عيسى\n\n✅ *بعد الدفع، يرجى إرسال رقم العملية لإتمام التفعيل*`;
 
-function printReceipt() {
-    window.print();
-}
+    // رقمك على واتساب
+    let myNumber = "249127809453";
 
-function downloadPDF() {
-    // يمكن إضافة الوظيفة لتحميل PDF هنا باستخدام مكتبة مثل jsPDF
-    alert("تحميل PDF غير مفعل في هذه النسخة.");
-}
+    // رابط واتساب للعميل
+    let whatsappClientUrl = `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
+    
+    // رابط واتساب لك (لصاحب الخدمة)
+    let whatsappMyUrl = `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
 
-function sendTransaction() {
-    let transactionId = document.getElementById("transactionId").value;
-    if (!transactionId) {
-        alert("الرجاء إدخال رقم العملية!");
-    } else {
-        alert("تم إرسال رقم العملية بنجاح!");
-    }
+    // فتح نافذتين لواتساب
+    window.open(whatsappClientUrl, "_blank");
+    setTimeout(() => {
+        window.open(whatsappMyUrl, "_blank");
+    }, 2000); // فتح الرابط الثاني بعد ثانيتين
 }
